@@ -1,3 +1,26 @@
-h1 {
-    color: blue;
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    height: 95vh;
+}
+
+img {
+    height: 300px;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+.roboto-regular {
+  font-family: "Roboto", sans-serif;
+  margin-bottom: 15px;
+  font-size: large;
+  font-weight: bold;
+  font-style: normal;
+  text-decoration: none;
+  color: #6622CC;
 }
