@@ -6,10 +6,11 @@ import { Services } from './sections/services/services';
 import { About } from './sections/about/about';
 import { Projects } from './sections/projects/projects';
 import { Contact } from './sections/contact/contact';
+import { Footer } from './layout/footer/footer';
 
 @Component({
   selector: 'app-root',
-  imports: [Nav, Hero, Stats, Services, About, Projects, Contact],
+  imports: [Nav, Hero, Stats, Services, About, Projects, Contact, Footer],
   templateUrl: './app.html',
   styleUrl: './app.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

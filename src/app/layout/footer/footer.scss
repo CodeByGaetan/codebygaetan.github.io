@@ -1,0 +1,30 @@
+@use '../../../styles/mixins' as m;
+
+footer {
+  padding: 40px 0 56px;
+  text-align: center;
+}
+
+.foot-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 26px;
+  border-radius: 50px;
+  background: var(--surface);
+  color: var(--text-soft);
+  font-size: 0.88rem;
+  @include m.raised;
+
+  b {
+    color: var(--text);
+  }
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent-2);
+  box-shadow: 0 0 10px var(--accent-2);
+}
