@@ -1,8 +1,5 @@
 import { Project } from './project.model';
 
-// TODO: replace with the real App Store link once recovered (Fitime is published).
-const FITIME_APP_STORE_PLACEHOLDER = 'https://apps.apple.com/app/fitime';
-
 /** Curated projects, in display order. Content mirrors the livrable verbatim. */
 export const PROJECTS: Project[] = [
   {
@@ -66,6 +63,6 @@ export const PROJECTS: Project[] = [
     image: 'projects/fitime.png',
     video: 'projects/fitime.mp4',
     demo: 'https://fitime.codebygaetan.fr',
-    appStore: FITIME_APP_STORE_PLACEHOLDER,
+    appStore: 'https://apps.apple.com/fr/app/fitime/id6449876288',
   },
 ];
