@@ -1,0 +1,8 @@
+<div class="stats">
+  @for (stat of stats; track stat.value) {
+    <div class="stat">
+      <div class="num">{{ stat.value }}</div>
+      <div class="lbl">{{ stat.label }}</div>
+    </div>
+  }
+</div>

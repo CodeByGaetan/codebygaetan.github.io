@@ -1,0 +1,173 @@
+@use '../../../styles/mixins' as m;
+
+.hero {
+  padding-top: clamp(140px, 20vh, 200px);
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 54px;
+  align-items: center;
+}
+
+h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2.6rem, 5.4vw, 4.5rem);
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+  margin: 22px 0 24px;
+
+  .hl {
+    color: var(--accent);
+  }
+}
+
+.lede {
+  font-size: 1.12rem;
+  color: var(--text-soft);
+  max-width: 42ch;
+  margin-bottom: 34px;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.hero-visual {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 380px;
+}
+
+.disc {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: var(--surface);
+  display: grid;
+  place-items: center;
+  @include m.raised;
+  box-shadow: 14px 14px 30px var(--shadow-dark), -14px -14px 30px var(--shadow-light);
+}
+
+.disc-inner {
+  width: 210px;
+  height: 210px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  box-shadow: inset 9px 9px 18px var(--shadow-dark), inset -9px -9px 18px var(--shadow-light);
+}
+
+.mono {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 3.4rem;
+  letter-spacing: -0.04em;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  & + small {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.66rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    margin-top: 6px;
+  }
+}
+
+.chip {
+  position: absolute;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 700;
+  padding: 10px 15px;
+  border-radius: 30px;
+  background: var(--surface);
+  color: var(--text-soft);
+  white-space: nowrap;
+  @include m.raised-sm;
+  box-shadow: 5px 5px 11px var(--shadow-dark), -5px -5px 11px var(--shadow-light);
+  animation: float 5s ease-in-out infinite;
+}
+
+.chip--1 {
+  top: 6%;
+  left: -4%;
+  color: var(--accent);
+}
+
+.chip--2 {
+  top: 30%;
+  right: -10%;
+  animation-delay: -1.5s;
+}
+
+.chip--3 {
+  bottom: 14%;
+  left: -10%;
+  animation-delay: -3s;
+}
+
+.chip--4 {
+  bottom: -2%;
+  right: 2%;
+  animation-delay: -2.2s;
+  color: var(--accent-2);
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@media (max-width: 920px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .hero-visual {
+    order: -1;
+  }
+}
+
+// On phones the disc fills the width, so there is no room left on the sides:
+// move the chips above and below the disc instead of around it.
+@media (max-width: 520px) {
+  .hero-visual {
+    min-height: 420px;
+  }
+
+  .chip--1 {
+    top: 0;
+    left: 8%;
+  }
+
+  .chip--2 {
+    top: 0;
+    right: 8%;
+  }
+
+  .chip--3 {
+    bottom: 0;
+    left: 8%;
+  }
+
+  .chip--4 {
+    bottom: 0;
+    right: 8%;
+  }
+}

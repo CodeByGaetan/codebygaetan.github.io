@@ -1,0 +1,41 @@
+@use '../../../styles/mixins' as m;
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-top: 30px;
+}
+
+.stat {
+  padding: 26px 24px;
+  border-radius: var(--r-md);
+  background: var(--surface);
+  @include m.raised;
+}
+
+.num {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.7rem;
+  letter-spacing: -0.02em;
+  color: var(--accent);
+}
+
+.lbl {
+  font-size: 0.82rem;
+  color: var(--text-soft);
+  margin-top: 4px;
+}
+
+@media (max-width: 920px) {
+  .stats {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .stats {
+    grid-template-columns: 1fr;
+  }
+}

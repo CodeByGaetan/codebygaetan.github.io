@@ -1,5 +1,6 @@
 // Global styles — neumorphism theme.
 @use "styles/tokens";
+@use "styles/mixins" as m;
 
 * {
   margin: 0;
@@ -46,6 +47,52 @@ video {
 
 section {
   padding: clamp(70px, 11vh, 130px) 0;
+}
+
+// Section eyebrow label, reused across sections.
+.eyebrow {
+  @include m.eyebrow;
+}
+
+// Neumorphic button, reused across hero, projects and contact.
+.btn {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.95rem;
+  border: none;
+  cursor: pointer;
+  padding: 16px 28px;
+  border-radius: var(--r-md);
+  background: var(--surface);
+  color: var(--text);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: 0.25s var(--ease);
+  @include m.raised;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0);
+    @include m.inset;
+  }
+
+  svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  &.primary {
+    background: var(--accent);
+    color: var(--accent-on);
+
+    &:active {
+      box-shadow: inset 4px 4px 9px rgba(0, 0, 0, 0.22);
+    }
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
