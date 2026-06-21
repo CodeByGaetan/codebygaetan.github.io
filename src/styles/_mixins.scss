@@ -1,0 +1,39 @@
+// Reusable neumorphic primitives — @use this file in any component:
+//   @use '../../styles/mixins' as m;
+//   .card { @include m.raised; }
+
+@mixin raised {
+  box-shadow: 7px 7px 16px var(--shadow-dark), -7px -7px 16px var(--shadow-light);
+}
+
+@mixin raised-sm {
+  box-shadow: 4px 4px 9px var(--shadow-dark), -4px -4px 9px var(--shadow-light);
+}
+
+@mixin inset {
+  box-shadow: inset 5px 5px 11px var(--shadow-dark), inset -5px -5px 11px var(--shadow-light);
+}
+
+@mixin inset-sm {
+  box-shadow: inset 3px 3px 6px var(--shadow-dark), inset -3px -3px 6px var(--shadow-light);
+}
+
+// Section eyebrow label (mono, uppercase, accent dash).
+@mixin eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  &::before {
+    content: "";
+    width: 26px;
+    height: 2px;
+    background: var(--accent);
+    border-radius: 2px;
+  }
+}
