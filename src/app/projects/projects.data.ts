@@ -51,7 +51,7 @@ export const PROJECTS: Project[] = [
       "Application full-stack de gestion d'une médiathèque : mise en corbeille et suppression différée de films et séries, avec purge automatique. Back-end Java/Spring Boot, front Angular, authentification via Plex, conteneurisée avec Docker. Développée en développement assisté par IA.",
     tags: ['Angular', 'Spring Boot', 'Docker'],
     image: 'projects/removerr.png',
-    video: 'projects/removerr.mp4',
+    // Image-only: a full video demo is impractical for this self-hosted tool.
     // No public demo (self-hosted). Public repository ⇒ "Code source".
     source: 'https://github.com/CodeByGaetan/Removerr',
   },

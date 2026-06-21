@@ -13,8 +13,8 @@ export interface Project {
   tags: string[];
   /** Still image — 1600×1000 (web) / native frame (mobile). */
   image: string;
-  /** Looping muted mp4 revealed on hover and in the lightbox. */
-  video: string;
+  /** Looping muted mp4 revealed on hover and in the lightbox. Omit for image-only projects. */
+  video?: string;
   /** Live public demo. The browser-bar URL is derived from it. */
   demo?: string;
   /**

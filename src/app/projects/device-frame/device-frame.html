@@ -1,16 +1,18 @@
 <ng-template #media>
   <div class="media">
     <img [src]="project().image" [alt]="project().name" loading="lazy" />
-    <video
-      #video
-      class="video"
-      [class.is-active]="active()"
-      [src]="project().video"
-      muted
-      loop
-      playsinline
-      preload="none"
-    ></video>
+    @if (project().video; as video) {
+      <video
+        #video
+        class="video"
+        [class.is-active]="active()"
+        [src]="video"
+        muted
+        loop
+        playsinline
+        preload="none"
+      ></video>
+    }
   </div>
 </ng-template>
 
