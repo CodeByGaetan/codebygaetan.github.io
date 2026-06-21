@@ -5,10 +5,11 @@ import { Stats } from './sections/stats/stats';
 import { Services } from './sections/services/services';
 import { About } from './sections/about/about';
 import { Projects } from './sections/projects/projects';
+import { Contact } from './sections/contact/contact';
 
 @Component({
   selector: 'app-root',
-  imports: [Nav, Hero, Stats, Services, About, Projects],
+  imports: [Nav, Hero, Stats, Services, About, Projects, Contact],
   templateUrl: './app.html',
   styleUrl: './app.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

@@ -1,0 +1,150 @@
+@use '../../../styles/mixins' as m;
+
+.contact {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 54px;
+  align-items: center;
+}
+
+.contact-side {
+  h2 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(2rem, 4vw, 3rem);
+    letter-spacing: -0.025em;
+    line-height: 1.05;
+    margin: 16px 0 18px;
+  }
+
+  p {
+    color: var(--text-soft);
+    font-size: 1.05rem;
+    margin-bottom: 26px;
+  }
+}
+
+.social {
+  display: flex;
+  gap: 14px;
+
+  a {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    color: var(--text-soft);
+    transition: 0.25s var(--ease);
+    @include m.raised-sm;
+
+    &:hover {
+      color: var(--accent);
+      transform: translateY(-3px);
+    }
+
+    &:active {
+      @include m.inset-sm;
+    }
+
+    svg {
+      width: 21px;
+      height: 21px;
+    }
+  }
+}
+
+.contact-form {
+  padding: 38px;
+  border-radius: var(--r-lg);
+  background: var(--surface);
+  @include m.raised;
+}
+
+.field {
+  margin-bottom: 18px;
+
+  label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--text-soft);
+    margin-bottom: 9px;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    border: none;
+    background: var(--surface);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    padding: 15px 18px;
+    border-radius: var(--r-sm);
+    outline: none;
+    @include m.inset;
+    transition: box-shadow 0.25s var(--ease);
+
+    &::placeholder {
+      color: var(--text-faint);
+    }
+
+    &:focus {
+      box-shadow: inset 4px 4px 9px var(--shadow-dark), inset -4px -4px 9px var(--shadow-light),
+        0 0 0 2px var(--accent);
+    }
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+}
+
+.error {
+  margin-top: 7px;
+  font-size: 0.78rem;
+  color: var(--accent-2);
+}
+
+// Honeypot — visually hidden but still in the DOM for bots.
+.hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.submit {
+  width: 100%;
+  justify-content: center;
+  margin-top: 4px;
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: progress;
+  }
+}
+
+.status {
+  margin-top: 16px;
+  font-size: 0.9rem;
+  text-align: center;
+
+  &--ok {
+    color: var(--accent);
+  }
+
+  &--error {
+    color: var(--accent-2);
+  }
+}
+
+@media (max-width: 920px) {
+  .contact {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+}
