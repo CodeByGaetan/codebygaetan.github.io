@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="6 6 52 52" width="64" height="64" role="img" aria-label="codebygaetan">
+  <defs>
+    <!-- Subtle depth on the brackets -->
+    <filter id="brk" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0.6" dy="0.6" stdDeviation="0.5" flood-color="#2b3242" flood-opacity="0.18"/>
+    </filter>
+    <!-- Same gradient as the hero title (GLS): 135deg, accent -> accent-2.
+         Coords in glyph space; (73,701)=visual top-left, (649,-118)=visual bottom-right. -->
+    <linearGradient id="grad" gradientUnits="userSpaceOnUse" x1="73" y1="701" x2="649" y2="-118">
+      <stop offset="0" stop-color="#4f5bd5"/>
+      <stop offset="1" stop-color="#ff7a59"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background tile -->
+  <rect x="6" y="6" width="52" height="52" rx="15" fill="#e6e9f1"/>
+
+  <!-- Brackets [ ] — real glyphs from Bricolage Grotesque (font-display), bold -->
+  <g transform="translate(15.39 45.41) scale(0.046 -0.046)" fill="url(#grad)" filter="url(#brk)">
+    <path d="M73 -118V687H206V-118ZM73 -118V-8H301V-118ZM73 591V701H301V591Z"/>
+    <path d="M649 -118H517V687H649ZM649 -118H421V-8H649ZM649 591H421V701H649Z"/>
+  </g>
+</svg>
