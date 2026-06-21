@@ -1,0 +1,156 @@
+@use '../../../styles/mixins' as m;
+
+.site-header {
+  position: fixed;
+  top: 18px;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  display: flex;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--surface);
+  border-radius: 60px;
+  padding: 9px 9px 9px 22px;
+  @include m.raised;
+  transition: background 0.5s var(--ease), box-shadow 0.5s var(--ease);
+}
+
+.brand {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
+  margin-right: 14px;
+  white-space: nowrap;
+
+  b {
+    color: var(--accent);
+  }
+}
+
+.nav-links {
+  display: flex;
+  gap: 4px;
+
+  a {
+    font-size: 0.86rem;
+    font-weight: 600;
+    color: var(--text-soft);
+    padding: 9px 16px;
+    border-radius: 40px;
+    transition: 0.3s var(--ease);
+
+    &:hover {
+      color: var(--text);
+      @include m.inset-sm;
+    }
+  }
+}
+
+.nav-cta {
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: var(--accent-on);
+  background: var(--accent);
+  padding: 11px 20px;
+  border-radius: 40px;
+  @include m.raised-sm;
+  transition: 0.25s var(--ease);
+
+  &:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.06);
+  }
+
+  &:active {
+    transform: translateY(1px) scale(0.98);
+  }
+}
+
+.nav-cta--mobile {
+  display: none;
+}
+
+.icon-btn {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: none;
+  cursor: pointer;
+  color: var(--text-soft);
+  display: grid;
+  place-items: center;
+  @include m.raised-sm;
+  transition: 0.25s var(--ease);
+
+  &:hover {
+    color: var(--accent);
+  }
+
+  &:active {
+    @include m.inset-sm;
+  }
+
+  svg {
+    width: 19px;
+    height: 19px;
+  }
+}
+
+.burger {
+  display: none;
+}
+
+@media (max-width: 920px) {
+  .nav {
+    position: relative;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: calc(100% + 12px);
+    right: 0;
+    left: 0;
+    flex-direction: column;
+    gap: 6px;
+    padding: 14px;
+    background: var(--surface);
+    border-radius: var(--r-lg);
+    @include m.raised;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: opacity 0.25s var(--ease), transform 0.25s var(--ease), visibility 0.25s;
+
+    &.open {
+      opacity: 1;
+      visibility: visible;
+      transform: none;
+    }
+
+    a {
+      text-align: center;
+    }
+  }
+
+  .nav-cta--mobile {
+    display: block;
+    margin-top: 4px;
+  }
+
+  .nav-cta--desktop {
+    display: none;
+  }
+
+  .burger {
+    display: grid;
+  }
+}

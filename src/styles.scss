@@ -37,6 +37,17 @@ video {
   color: var(--accent-on);
 }
 
+// Layout helpers shared by every section.
+.wrap {
+  max-width: var(--wrap);
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+section {
+  padding: clamp(70px, 11vh, 130px) 0;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

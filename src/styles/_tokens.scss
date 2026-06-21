@@ -1,4 +1,4 @@
-// Design tokens — neumorphism theme.
+// Design tokens — neumorphism theme (light only).
 // Global CSS custom properties: emitted once, inherited by every component
 // (no @use needed in components to read them — only to use the mixins).
 
@@ -18,9 +18,7 @@
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
 
   --wrap: 1180px;
-}
 
-[data-theme="light"] {
   --bg: #e6e9f1;
   --surface: #e6e9f1;
   --shadow-dark: #bfc6d6;
@@ -30,18 +28,4 @@
   --text-faint: #9aa2b4;
   --accent-on: #ffffff;
   --grain-op: 0.045;
-}
-
-[data-theme="dark"] {
-  --bg: #24262f;
-  --surface: #24262f;
-  --shadow-dark: #1a1c23;
-  --shadow-light: #2f323d;
-  --text: #e8eaf2;
-  --text-soft: #a3a9bd;
-  --text-faint: #717892;
-  --accent: #7c86ff;
-  --accent-soft: #9aa2ff;
-  --accent-on: #16171d;
-  --grain-op: 0.06;
 }
