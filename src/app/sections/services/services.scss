@@ -1,0 +1,54 @@
+@use '../../../styles/mixins' as m;
+
+.services {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.svc {
+  padding: 34px 30px;
+  border-radius: var(--r-lg);
+  background: var(--surface);
+  transition: 0.35s var(--ease);
+  @include m.raised;
+
+  &:hover {
+    transform: translateY(-6px);
+  }
+}
+
+.ic {
+  width: 58px;
+  height: 58px;
+  border-radius: 18px;
+  display: grid;
+  place-items: center;
+  color: var(--accent);
+  margin-bottom: 22px;
+  @include m.inset;
+
+  svg {
+    width: 26px;
+    height: 26px;
+  }
+}
+
+h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.3rem;
+  letter-spacing: -0.01em;
+  margin-bottom: 10px;
+}
+
+p {
+  color: var(--text-soft);
+  font-size: 0.95rem;
+}
+
+@media (max-width: 920px) {
+  .services {
+    grid-template-columns: 1fr;
+  }
+}

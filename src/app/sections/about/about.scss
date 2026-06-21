@@ -1,0 +1,83 @@
+@use '../../../styles/mixins' as m;
+
+.about {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 54px;
+  align-items: center;
+}
+
+.about-card {
+  padding: 40px;
+  border-radius: var(--r-lg);
+  background: var(--surface);
+  @include m.raised;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--text-faint) 22%, transparent);
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  .k {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    color: var(--accent);
+    flex-shrink: 0;
+    @include m.inset-sm;
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  b {
+    display: block;
+    font-weight: 700;
+    font-size: 0.95rem;
+  }
+
+  span {
+    font-size: 0.85rem;
+    color: var(--text-soft);
+  }
+}
+
+.about-text {
+  h2 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(1.9rem, 3.6vw, 2.7rem);
+    letter-spacing: -0.025em;
+    line-height: 1.06;
+    margin: 16px 0 22px;
+  }
+
+  p {
+    color: var(--text-soft);
+    margin-bottom: 18px;
+    font-size: 1.05rem;
+
+    b {
+      color: var(--text);
+      font-weight: 700;
+    }
+  }
+}
+
+@media (max-width: 920px) {
+  .about {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+}
