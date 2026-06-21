@@ -1,0 +1,17 @@
+<section id="projects">
+  <div class="sec-head">
+    <span class="eyebrow">Réalisations</span>
+    <h2>Une sélection de projets.</h2>
+    <p>Des applications réelles, en production, pensées pour leurs utilisateurs.</p>
+  </div>
+
+  <div class="projects-grid">
+    @for (project of projects; track project.id) {
+      <app-project-card [project]="project" (open)="open(project)" />
+    }
+  </div>
+</section>
+
+@if (selected(); as project) {
+  <app-lightbox [project]="project" (close)="close()" />
+}

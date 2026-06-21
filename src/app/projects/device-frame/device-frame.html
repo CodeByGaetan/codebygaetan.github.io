@@ -1,0 +1,25 @@
+<ng-template #media>
+  <div class="media">
+    <img [src]="project().image" [alt]="project().name" loading="lazy" />
+    <video
+      #video
+      class="video"
+      [class.is-active]="active()"
+      [src]="project().video"
+      muted
+      loop
+      playsinline
+      preload="none"
+    ></video>
+  </div>
+</ng-template>
+
+@if (project().type === 'mobile') {
+  <div class="phone">
+    <ng-container [ngTemplateOutlet]="media" />
+  </div>
+} @else {
+  <div class="screen">
+    <ng-container [ngTemplateOutlet]="media" />
+  </div>
+}

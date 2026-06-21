@@ -1,0 +1,50 @@
+<div class="lb-card">
+  <button #closeButton class="lb-close" type="button" (click)="close.emit()" aria-label="Fermer">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+      <path d="M6 6l12 12M18 6 6 18" />
+    </svg>
+  </button>
+
+  <div class="lb-media">
+    <app-device-frame [project]="project()" [active]="true" />
+  </div>
+
+  <div class="lb-info">
+    <div class="meta">{{ project().badge }}</div>
+    <h3>{{ project().name }}</h3>
+    <p>{{ project().description }}</p>
+
+    @if (project().tags.length) {
+      <div class="tags">
+        @for (tag of project().tags; track tag) {
+          <span class="tag">{{ tag }}</span>
+        }
+      </div>
+    }
+
+    <div class="lb-links">
+      @if (project().demo; as demo) {
+        <a class="btn primary" [href]="demo" target="_blank" rel="noopener">
+          Voir la démo
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+            <path d="M7 17 17 7M9 7h8v8" />
+          </svg>
+        </a>
+      }
+
+      @if (project().type === 'mobile') {
+        @if (project().appStore; as appStore) {
+          <a class="btn" [href]="appStore" target="_blank" rel="noopener">Disponible sur l'App Store</a>
+        } @else {
+          <span class="lb-note">À paraître sur l'App Store</span>
+        }
+      }
+
+      @if (project().source; as source) {
+        <a class="btn" [href]="source" target="_blank" rel="noopener">Code source</a>
+      } @else {
+        <span class="lb-note">Projet privé · démo en ligne</span>
+      }
+    </div>
+  </div>
+</div>

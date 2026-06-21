@@ -75,6 +75,23 @@ section {
   }
 }
 
+// Tech chips, reused across project cards and the lightbox.
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.tag {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  font-weight: 700;
+  padding: 6px 11px;
+  border-radius: 20px;
+  color: var(--text-soft);
+  @include m.inset-sm;
+}
+
 // Neumorphic button, reused across hero, projects and contact.
 .btn {
   font-family: var(--font-body);
