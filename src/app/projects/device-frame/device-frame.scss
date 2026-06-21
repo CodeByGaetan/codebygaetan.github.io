@@ -18,8 +18,12 @@
     inset: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    object-position: top center;
+    // `cover` for the card thumbnails; the lightbox overrides to `contain`
+    // so the full screenshot/video is visible, never cropped.
+    object-fit: var(--media-fit, cover);
+    // `top center` for the cards; the lightbox centers it so the contain
+    // letterbox bands split evenly top and bottom.
+    object-position: var(--media-pos, top center);
   }
 
   .video {
@@ -45,25 +49,13 @@
   height: 100%;
   aspect-ratio: 9 / 19;
   background: #0d0e12;
-  border-radius: 26px;
+  // Defaults sized for the large lightbox frame; the card overrides them smaller.
+  border-radius: var(--phone-radius, 26px);
   padding: 6px;
   position: relative;
   box-shadow: 4px 4px 12px var(--shadow-dark), -4px -4px 12px var(--shadow-light);
 
-  &::before {
-    content: "";
-    position: absolute;
-    top: 11px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 36px;
-    height: 5px;
-    border-radius: 5px;
-    background: #2b2d36;
-    z-index: 4;
-  }
-
   .media {
-    border-radius: 20px;
+    border-radius: var(--media-radius, 20px);
   }
 }

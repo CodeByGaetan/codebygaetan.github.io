@@ -34,6 +34,13 @@
   overflow: hidden;
   padding: 18px;
   @include m.inset;
+
+  // The phone frame is much smaller here than in the lightbox, so dial the
+  // corner radius down to keep it proportionate (less rounded).
+  app-device-frame {
+    --phone-radius: 16px;
+    --media-radius: 11px;
+  }
 }
 
 .type-badge {

@@ -43,6 +43,13 @@
   min-height: 360px;
   padding: 18px;
   @include m.inset;
+
+  // Detail view: show the whole screenshot/video, no cropping, centered so the
+  // letterbox bands are split evenly top and bottom.
+  app-device-frame {
+    --media-fit: contain;
+    --media-pos: center;
+  }
 }
 
 .meta {
