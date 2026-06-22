@@ -1,59 +1,60 @@
-# Portfolio
+# Portfolio — Gaétan La Selve
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.0.3.
+Personal portfolio of **Gaétan La Selve**, full-stack web & iOS developer — _from concept to production._
 
-## Development server
+🔗 **Live site:** [codebygaetan.fr](https://codebygaetan.fr)
 
-To start a local development server, run:
+This repository is published as part of my portfolio to showcase my work. It is not intended to be reused.
 
-```bash
-ng serve
-```
+## Overview
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+A fast, server-rendered single-page portfolio built with Angular. It presents who I am, the services I offer, a selection of projects (with inline video demos), and a contact form — no back-end of my own, the form is handled by [Web3Forms](https://web3forms.com).
 
-## Code scaffolding
+| | |
+|---|---|
+| **Framework** | Angular 22 (standalone components, signals) |
+| **Rendering** | SSR / prerendering via `@angular/ssr` |
+| **Styling** | SCSS — neumorphism design system (custom tokens & mixins) |
+| **Contact form** | Web3Forms (public access key, no server) |
+| **Hosting** | GitHub Pages — custom domain `codebygaetan.fr` |
+| **CI/CD** | GitHub Actions — build & deploy on every push to `main` |
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Sections
 
-```bash
-ng generate component component-name
-```
+- **Hero** — intro & headline
+- **About** — background & profile
+- **Services** — what I offer
+- **Stats** — key figures
+- **Projects** — IntuiFit, Lector, Baudy Training, Removerr, Fitime (with device-framed video demos & lightbox)
+- **Contact** — message form
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+## Local development
 
 ```bash
-ng test
+npm install
+npm start
 ```
 
-## Running end-to-end tests
+Then open `http://localhost:4200/`.
 
-For end-to-end (e2e) testing, run:
+## Build
 
 ```bash
-ng e2e
+npm run build
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Artifacts are emitted to `dist/portfolio/browser`.
 
-## Additional Resources
+## Tests
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+```bash
+npm test
+```
+
+## Deployment
+
+Pushing to `main` triggers [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml), which builds the app and publishes it to GitHub Pages.
+
+---
+
+Made by [Gaétan La Selve](https://github.com/CodeByGaetan).
