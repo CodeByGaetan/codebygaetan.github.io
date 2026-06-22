@@ -6,6 +6,22 @@
       <a href="#services" (click)="closeMenu()">Ce que je fais</a>
       <a href="#about" (click)="closeMenu()">À propos</a>
       <a href="#projects" (click)="closeMenu()">Projets</a>
+      <a
+        href="/CV-Gaetan-La-Selve.pdf"
+        class="nav-cv"
+        target="_blank"
+        rel="noopener"
+        download="CV-Gaetan-La-Selve.pdf"
+        aria-label="Télécharger le CV de Gaétan La Selve au format PDF"
+        (click)="closeMenu()"
+      >
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+          <path d="M7 10l5 5 5-5" />
+          <path d="M12 15V3" />
+        </svg>
+        Télécharger mon CV
+      </a>
       <a href="#contact" class="nav-cta nav-cta--mobile" (click)="closeMenu()">Me contacter</a>
     </div>
 

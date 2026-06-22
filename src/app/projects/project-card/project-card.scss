@@ -105,6 +105,7 @@
 
 .card:hover .arr {
   transform: rotate(-45deg);
-  background: var(--accent);
+  background: var(--accent-grad);
   color: var(--accent-on);
+  @include m.raised-accent-sm;
 }

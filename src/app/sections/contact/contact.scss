@@ -34,6 +34,7 @@
     border-radius: 50%;
     display: grid;
     place-items: center;
+    background: var(--surface);
     color: var(--text-soft);
     transition: 0.25s var(--ease);
     @include m.raised-sm;
@@ -51,6 +52,17 @@
       width: 21px;
       height: 21px;
     }
+  }
+}
+
+.cv-download {
+  margin-top: 26px;
+  padding: 11px 20px;
+  font-size: 0.86rem;
+
+  svg {
+    width: 16px;
+    height: 16px;
   }
 }
 

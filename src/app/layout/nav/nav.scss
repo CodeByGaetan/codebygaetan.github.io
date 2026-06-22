@@ -54,28 +54,53 @@
   }
 }
 
+.nav-cv {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  white-space: nowrap;
+
+  svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+  }
+}
+
 .nav-cta {
   font-size: 0.84rem;
   font-weight: 700;
   color: var(--accent-on);
-  background: var(--accent);
+  background: var(--accent-grad);
   padding: 11px 20px;
   border-radius: 40px;
-  @include m.raised-sm;
+  @include m.raised-accent-sm;
   transition: 0.25s var(--ease);
 
   &:hover {
     transform: translateY(-1px);
-    filter: brightness(1.06);
+    box-shadow: 6px 6px 14px var(--accent-shadow), -5px -5px 11px var(--accent-hi);
   }
 
   &:active {
     transform: translateY(1px) scale(0.98);
+    @include m.inset-accent;
   }
 }
 
 .nav-cta--mobile {
   display: none;
+}
+
+// The mobile CTA sits inside `.nav-links`, whose generic `a` rules would
+// otherwise win on specificity and break its colour/hover. Restore them.
+.nav-links a.nav-cta {
+  color: var(--accent-on);
+
+  &:hover {
+    color: var(--accent-on);
+    @include m.raised-accent-sm;
+  }
 }
 
 .icon-btn {
@@ -138,6 +163,10 @@
 
     a {
       text-align: center;
+    }
+
+    .nav-cv {
+      justify-content: center;
     }
   }
 

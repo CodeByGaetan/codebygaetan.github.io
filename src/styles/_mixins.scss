@@ -18,6 +18,21 @@
   box-shadow: inset 3px 3px 6px var(--shadow-dark), inset -3px -3px 6px var(--shadow-light);
 }
 
+// Accent CTA extruded from coloured material: tinted drop-shadow keeps it
+// grounded on the surface, white highlight preserves the neumorphic language.
+@mixin raised-accent {
+  box-shadow: 6px 6px 16px var(--accent-shadow), -6px -6px 14px var(--accent-hi);
+}
+
+@mixin raised-accent-sm {
+  box-shadow: 4px 4px 10px var(--accent-shadow), -4px -4px 9px var(--accent-hi);
+}
+
+// Pressed state for the accent CTA: carved into its own colour.
+@mixin inset-accent {
+  box-shadow: inset 4px 4px 9px var(--accent-shadow-deep), inset -3px -3px 7px var(--accent-hi);
+}
+
 // Section eyebrow label (mono, uppercase, accent dash).
 @mixin eyebrow {
   font-family: var(--font-mono);

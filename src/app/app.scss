@@ -16,28 +16,28 @@
 }
 
 .blob--a {
-  width: 46vw;
-  height: 46vw;
+  width: 40vw;
+  height: 40vw;
   background: var(--accent);
-  top: -10%;
-  left: -8%;
+  top: -14%;
+  left: -12%;
 }
 
 .blob--b {
-  width: 38vw;
-  height: 38vw;
+  width: 32vw;
+  height: 32vw;
   background: var(--accent-2);
-  bottom: -12%;
-  right: -6%;
+  bottom: -16%;
+  right: -10%;
   animation-delay: -7s;
 }
 
 .blob--c {
-  width: 30vw;
-  height: 30vw;
+  width: 26vw;
+  height: 26vw;
   background: var(--accent-soft);
-  top: 40%;
-  left: 55%;
+  top: 42%;
+  left: 60%;
   animation-delay: -13s;
   opacity: 0.22;
 }
