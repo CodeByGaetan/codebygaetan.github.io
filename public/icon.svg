@@ -1,23 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="6 6 52 52" width="64" height="64" role="img" aria-label="codebygaetan">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="6 6 52 52" width="64" height="64" role="img" aria-label="Gaétan La Selve">
   <defs>
-    <!-- Subtle depth on the brackets -->
+    <!-- Subtle depth on the letters -->
     <filter id="brk" x="-30%" y="-30%" width="160%" height="160%">
       <feDropShadow dx="0.6" dy="0.6" stdDeviation="0.5" flood-color="#2b3242" flood-opacity="0.18"/>
     </filter>
-    <!-- Same gradient as the hero title (GL): 135deg, accent -> accent-2.
-         Coords in glyph space; (73,701)=visual top-left, (649,-118)=visual bottom-right. -->
-    <linearGradient id="grad" gradientUnits="userSpaceOnUse" x1="73" y1="701" x2="649" y2="-118">
+    <!-- Same gradient as the hero badge (GL): 135deg, accent -> accent-2.
+         One single gradient spanning both letters (like background-clip:text on the site).
+         Coords in glyph space; (39,674)=visual top-left, (1148,-14)=visual bottom-right. -->
+    <linearGradient id="grad" gradientUnits="userSpaceOnUse" x1="39" y1="674" x2="1148" y2="-14">
       <stop offset="0" stop-color="#4f5bd5"/>
       <stop offset="1" stop-color="#ff7a59"/>
     </linearGradient>
   </defs>
 
-  <!-- Background tile -->
-  <rect x="6" y="6" width="52" height="52" rx="15" fill="#e6e9f1"/>
+  <!-- Background disc -->
+  <circle cx="32" cy="32" r="26" fill="#e6e9f1"/>
 
-  <!-- Brackets [ ] — real glyphs from Bricolage Grotesque (font-display), bold -->
-  <g transform="translate(15.39 45.41) scale(0.046 -0.046)" fill="url(#grad)" filter="url(#brk)">
-    <path d="M73 -118V687H206V-118ZM73 -118V-8H301V-118ZM73 591V701H301V591Z"/>
-    <path d="M649 -118H517V687H649ZM649 -118H421V-8H649ZM649 591H421V701H649Z"/>
+  <!-- Initials GL — real glyphs from Bricolage Grotesque (font-display), weight 800 -->
+  <g transform="translate(11.66 43.3) scale(0.03425 -0.03425)" fill="url(#grad)" filter="url(#brk)">
+    <path d="M321.7 -14.0Q239.0 -14.0 175.2 25.0Q111.3 64.0 75.2 139.2Q39.0 214.3 39.0 323.0Q39.0 403.0 59.8 467.5Q80.7 532.0 122.3 578.2Q164.0 624.3 225.7 649.2Q287.3 674.0 369.7 674.0Q434.3 674.0 484.8 658.3Q535.3 642.7 570.7 614.3Q606.0 586.0 624.0 547.2Q642.0 508.3 641.0 461.3L489.3 423.3Q489.3 463.0 473.0 489.2Q456.7 515.3 428.2 529.0Q399.7 542.7 363.0 542.7Q314.0 542.7 279.3 519.3Q244.7 496.0 226.5 448.7Q208.3 401.3 208.3 330.3Q208.3 277.3 218.7 236.8Q229.0 196.3 249.7 169.2Q270.3 142.0 300.8 128.2Q331.3 114.3 372.0 114.3Q412.7 114.3 442.0 127.5Q471.3 140.7 488.2 166.5Q505.0 192.3 505.7 230.7H393.0V344.7H660.3V218.0V0.0H550.7L548.7 169.3H532.3Q519.3 110.0 493.2 69.0Q467.0 28.0 424.8 7.0Q382.7 -14.0 321.7 -14.0Z"/>
+    <path d="M724.0 0.0V660.0H885.3V0.0ZM752.7 0.0V136.0H1148.3V0.0Z"/>
   </g>
 </svg>
