@@ -13,7 +13,7 @@ export const PROJECTS: Project[] = [
     image: 'projects/intuifit.png',
     video: 'projects/intuifit.mp4',
     demo: 'https://codebygaetan.github.io/intuifit-web/fr/#/',
-    // appStore omitted on purpose ⇒ "à paraître" (awaiting App Store validation).
+    appStore: 'https://apps.apple.com/fr/app/intuifit-suivi-muscu-rapide/id6777721637',
   },
   {
     id: 'lector',
