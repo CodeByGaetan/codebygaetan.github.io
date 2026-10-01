@@ -1,6 +1,9 @@
 import { Project } from './project.model';
 
-/** Curated projects, in display order. Content mirrors the livrable verbatim. */
+/**
+ * Curated projects, in display order. Source of truth for project content;
+ * editorial rules (forbidden terms, selection, tone) live in the job-search folder.
+ */
 export const PROJECTS: Project[] = [
   {
     id: 'intuifit',
@@ -58,7 +61,7 @@ export const PROJECTS: Project[] = [
     type: 'mobile',
     badge: 'Mobile · iOS',
     description:
-      "Application iOS d'entraînement qui réconcilie le chrono HIIT/circuit et le suivi de musculation, pensée pour composer ses propres séances sans choisir un camp. App Apple Watch, minuteur en Dynamic Island, sync iCloud sans compte tiers, export .fitime. Gratuite (avec pub), Premium one-shot pour retirer les pubs. Conçue et développée seul.",
+      "Ma première application iOS, d'entraînement : chrono HIIT/circuit et suivi de musculation dans une même séance. App Apple Watch, minuteur en Dynamic Island, sync iCloud. Conçue et développée seul.",
     tags: ['Swift', 'SwiftUI', 'App Store'],
     image: 'projects/fitime.png',
     video: 'projects/fitime.mp4',
