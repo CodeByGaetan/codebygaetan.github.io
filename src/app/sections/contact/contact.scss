@@ -55,14 +55,33 @@
   }
 }
 
-.cv-download {
+.cv-actions {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
   margin-top: 26px;
+}
+
+.cv-download {
   padding: 11px 20px;
   font-size: 0.86rem;
 
   svg {
     width: 16px;
     height: 16px;
+  }
+}
+
+.cv-download-en {
+  font-size: 0.8rem;
+  color: var(--text-soft);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.25s var(--ease);
+
+  &:hover {
+    color: var(--accent);
   }
 }
 
